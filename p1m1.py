@@ -45,5 +45,3 @@ response = requests.get(url=url, headers=headers, params=params)
 data = response.json()
 for i in range(number_of_songs):
     print(data['albums']['items'][i]['name'])
-
-print("Hello world this worked")
