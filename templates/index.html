@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href={{ url_for( 'static' , filename='styles.css' ) }} />
+</head>
+
+<body>
+    <h1>Project 1 Milestone 1</h1>
+    <h1>{{ song["name"] }}</h1>
+    <div class="main_page">
+        <div class="song_image">
+            <img src={{song_image}} alt="this not wokring!" width="100" , height="100" />
+        </div>
+        <div class="song_info">
+
+        </div>
+        <div class="player">
+            <audio src={{song_preview}}></audio>
+        </div>
+    </div>
+</body>
+
+</html>
