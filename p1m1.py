@@ -61,7 +61,9 @@ def get_top_song_of_artist(artist_id):
 
 
 def p1m1_main():
-    artists_id = ["4zCH9qm4R2DADamUHMCa6O", "1Xyo4u8uXC1ZmMpatF05PJ", "0gxyHStUsqpMadRV0Di1Qt", "7dGJo4pcD2V6oG8kP0tJRR", "2jzc5TC5TVFLXQlBNiIUzE", "2YZyLoL8N0Wb9xBt1NhZWg"]
+    # bruno mars, clean bandit, anirudh ravichander, mark ronson, tones and I, katy perry, taylor swift, pharell williams
+    artists_id = ["0du5cEVh5yTK9QJze8zA0C", "6MDME20pz9RveH9rEXvrOM", "4zCH9qm4R2DADamUHMCa6O", "3hv9jJF3adDNsBSIQDqcjp",
+                  "2NjfBq1NflQcKSeiDooVjY", "6jJ0s89eD6GaHleKKya26X", "06HL4z0CvFAxyc27GXpf02", "2RdwBSPQiwcmiDo9kixcl8"]
 
     artist_num = random.randint(0, len(artists_id) - 1)
     top_tracks = get_top_song_of_artist(artists_id[artist_num])
