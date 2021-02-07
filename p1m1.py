@@ -25,20 +25,20 @@ def get_new_access_token():
     return access_token
 
 
-def create_access_token(t=time.time()):
-    global dotenv_file
-    token = os.getenv("TOKEN")
-    if t - float(os.getenv("TOKEN_TIMEOUT")) >= 3600:
-        token = get_new_access_token()
-        dotenv.set_key(dotenv_file, "TOKEN", token)
-        dotenv.set_key(dotenv_file, "TOKEN_TIMEOUT", str(time.time()))
-        print("Creating a new token")
-    dotenv_file = dotenv.find_dotenv()
-    dotenv.load_dotenv(dotenv_file)
-    return token
+# def create_access_token(t=time.time()):
+#     global dotenv_file
+#     token = os.getenv("TOKEN")
+#     if t - float(os.getenv("TOKEN_TIMEOUT")) >= 3600:
+#         token = get_new_access_token()
+#         dotenv.set_key(dotenv_file, "TOKEN", token)
+#         dotenv.set_key(dotenv_file, "TOKEN_TIMEOUT", str(time.time()))
+#         print("Creating a new token")
+#     dotenv_file = dotenv.find_dotenv()
+#     dotenv.load_dotenv(dotenv_file)
+#     return token
 
 
-access_token = create_access_token()
+access_token = get_new_access_token()
 
 base_url = "https://api.spotify.com/v1/"
 
