@@ -5,8 +5,7 @@ import dotenv
 import random
 import json as js
 
-dotenv_file = dotenv.find_dotenv()
-dotenv.load_dotenv(dotenv_file)
+dotenv.load_dotenv(dotenv.find_dotenv())
 client_id = os.getenv("CLIENT_ID")
 client_secret = os.getenv("CLIENT_SECRET")
 
@@ -62,7 +61,7 @@ def get_top_song_of_artist(artist_id):
 
 
 def p1m1_main():
-    artists_id = ["1mYsTxnqsietFxj1OgoGbG", "5mqguTgtaoCMNMZD6txCh6", "0gxyHStUsqpMadRV0Di1Qt"]
+    artists_id = ["4zCH9qm4R2DADamUHMCa6O", "1Xyo4u8uXC1ZmMpatF05PJ", "0gxyHStUsqpMadRV0Di1Qt", "7dGJo4pcD2V6oG8kP0tJRR", "2jzc5TC5TVFLXQlBNiIUzE", "2YZyLoL8N0Wb9xBt1NhZWg"]
 
     artist_num = random.randint(0, len(artists_id) - 1)
     top_tracks = get_top_song_of_artist(artists_id[artist_num])
