@@ -11,7 +11,7 @@ def main():
     song = p1m1.p1m1_main()
     return render_template(
         "index.html",
-        **song
+        song=song
     )
 
 
