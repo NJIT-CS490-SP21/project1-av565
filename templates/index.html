@@ -3,26 +3,41 @@
 
 <head>
     <link rel="stylesheet" href={{ url_for( 'static' , filename='styless.css' ) }} />
+    <base target="_blank">
 </head>
 
 <body>
     <h1>Project 1 Milestone 1</h1>
     <div class="main_page">
         <div class="song_image">
-            <img src={{ song["image_url"] }} alt="this not wokring!" />
+            <a href={{ song["song_url"] }}>
+                <img src={{ song["image_url"] }} alt="this not wokring!" />
+            </a>
         </div>
         <div class="song_info">
-            <p>Song name: {{ song["name"] }}</p>
-            <p>Artist(s):</p>
-            {% for i in range(song["artists"]|length) %}
-            <a href={{ song["artist_links"][i] }}>{{ song["artists"][i] }}</a>
-            {% if i != ((song["artists"]|length) - 1) %}
-            <p style="display: inline;">, </p>
-            {% endif %}
-            {% endfor %}
+            <p>Song: <a href={{ song["song_url"] }}>{{ song["name"] }}</a></p>
+            <p>Artist(s):
+
+                {% for i in range(song["artists"]|length) %}
+                <a href={{ song["artist_links"][i] }} style="display: inline;">{{ song["artists"][i] }}</a>
+                {% if i != ((song["artists"]|length) - 1) %}
+                ,
+                {% endif %}
+                {% endfor %}
+            </p>
         </div>
         <div class="song_player">
-            <audio src={{ song["song_preview"] }}></audio>
+            {% if song["song_preview"] != None %}
+            <!-- <iframe src={{ song["song_preview"] }} frameborder="0" allowtransparency="true"></iframe> -->
+            <figure style="display: inline;">
+                <figcaption>A preview of the song:</figcaption>
+                <audio controls src={{ song["song_preview"] }}>
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
+            </figure>
+            {% else %}
+            <p>Song preview not available</p>
+            {% endif %}
         </div>
     </div>
 </body>
