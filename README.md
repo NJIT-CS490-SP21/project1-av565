@@ -2,7 +2,24 @@ CS490 Project 1 Milestone 1
 This [temporary] app shows information on a random artist's top played song, from a list of three hard-coded artists.
 PLEASE NOTE:
     The song returned *might not* be the top song by listned to. This is just a random song from Spotify API's https://api.spotify.com/v1/artists/{id}/top-tracks GET request.
-    
+
+PACKAGES USED (SOME MAY HAVE ALREADY BEEN INSTALLED):
+    1. Flask: install using command: pip install -U "python-dotenv"
+    2. requests: install using command: python -m pip install requests
+    3. os
+    4. time
+    5. dotenv
+    6. random
+
+HOW TO SET-UP:
+    1. Make a .env file in the same directory as the app.py, and p1m1.py. Put YOUR OWN client_id and client_secret from Spotify. Make sure the file follows the            format:
+            CLIENT_ID="<your-id>"
+            CLIENT_SECRET="<your-secret>"
+    2. Make sure you have all the required packages installed, along with Python (latest version would be good).
+    3. Run app.py
+    4. Go to "localhost:8080" on your browser.
+
+
 a. 
     1. I was unable to send the song's json dictionary to the flask template. I created my own dictionary to store the essential information from the song.json()          object, and sent that instead.
     2. I had trouble properly making the song preview player. I looked at the right website (the one from firefox) and figured out somehow.
