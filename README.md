@@ -3,7 +3,7 @@ CS490 Project 1 Milestone 1
     PLEASE NOTE:
         The song returned *might not* be the top song by listned to. This is just a random song from Spotify API's https://api.spotify.com/v1/artists/{id}/top-tracks GET request.
 
-PACKAGES USED (SOME MAY HAVE ALREADY BEEN INSTALLED):
+PACKAGES/LIBRARIES USED (SOME MAY HAVE ALREADY BEEN INSTALLED):
     1. Flask: install using command: pip install -U "python-dotenv"
     2. requests: install using command: python -m pip install requests
     3. os
