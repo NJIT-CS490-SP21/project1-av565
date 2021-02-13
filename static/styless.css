@@ -1,12 +1,12 @@
 h1 {
-  text-align: center;
+    text-align: center;
 }
 
 iframe {
-  width: auto;
-  height: auto;
-  padding: 0;
-  display: block;
+    width: auto;
+    height: auto;
+    padding: 0;
+    display: block;
 }
 
 /* div .main_page {
