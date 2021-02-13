@@ -24,29 +24,11 @@ def get_new_access_token():
     return access_token
 
 
-# def create_access_token(t=time.time()):
-#     global dotenv_file
-#     token = os.getenv("TOKEN")
-#     if t - float(os.getenv("TOKEN_TIMEOUT")) >= 3600:
-#         token = get_new_access_token()
-#         dotenv.set_key(dotenv_file, "TOKEN", token)
-#         dotenv.set_key(dotenv_file, "TOKEN_TIMEOUT", str(time.time()))
-#         print("Creating a new token")
-#     dotenv_file = dotenv.find_dotenv()
-#     dotenv.load_dotenv(dotenv_file)
-#     return token
-
-
 access_token = get_new_access_token()
 
 base_url = "https://api.spotify.com/v1/"
 
 headers = {"Authorization": "Bearer {}".format(access_token)}
-
-
-# def get_artist_id(artist_name, market = "US"):
-#     url = base_url + "search"
-#     params = {'q': artist_name, "type": "artist", "market": market, "limit": 100, "offset": 0}
 
 
 def get_top_song_of_artist(artist_id):
@@ -71,8 +53,6 @@ def p1m1_main():
     song_num = random.randint(0, len(top_tracks) - 1)
     song = top_tracks[song_num]
 
-    # print(js.dumps(song, indent=4, sort_keys=True))
-    # print(song["preview_url"])
     song = {
         "name": song["name"],
         "song_url": song["external_urls"]["spotify"],
@@ -85,5 +65,3 @@ def p1m1_main():
         "song_preview": song["preview_url"] if (song["preview_url"] != "null") else None
     }
     return song
-# print("------------------------------------------")
-# print(js.dumps(song, indent=4))
