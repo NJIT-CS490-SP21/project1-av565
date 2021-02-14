@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href={{ url_for( 'static' , filename='styless.css' ) }} />
+    <link rel="stylesheet" href={{ url_for( 'static' , filename='styles.css' ) }} />
     <base target="_blank">
+    <script src={{ url_for('static', filename='script.js' ) }}></script>
+    <title>CS490 Project 1</title>
 </head>
 
 <body>
-    <h1>Project 1 Milestone 1</h1>
     <div class="main_page">
         <div class="song_image">
             <a href={{ song["song_url"] }}>
@@ -16,8 +17,12 @@
         </div>
         <div class="song_info">
             <p>Song: <a href={{ song["song_url"] }}>{{ song["name"] }}</a></p>
-            <p>Artist(s):
-
+            <p>
+                {% if song["artists"]|length == 1 %}
+                Artist:
+                {% else %}
+                Artists:
+                {% endif %}
                 {% for i in range(song["artists"]|length) %}
                 <a href={{ song["artist_links"][i] }} style="display: inline;">{{ song["artists"][i] }}</a>
                 {% if i != ((song["artists"]|length) - 1) %}
@@ -29,12 +34,10 @@
         <div class="song_player">
             {% if song["song_preview"] != None %}
             <!-- <iframe src={{ song["song_preview"] }} frameborder="0" allowtransparency="true"></iframe> -->
-            <figure style="display: inline;">
-                <figcaption>A preview of the song:</figcaption>
-                <audio controls src={{ song["song_preview"] }}>
-                    Your browser does not support the <code>audio</code> element.
-                </audio>
-            </figure>
+            <figcaption>A preview of the song:</figcaption>
+            <audio controls src={{ song["song_preview"] }}>
+                Your browser does not support the <code>audio</code> element.
+            </audio>
             {% else %}
             <p>Song preview not available</p>
             {% endif %}
