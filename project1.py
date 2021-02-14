@@ -6,8 +6,8 @@ import random
 import json as js
 
 dotenv.load_dotenv(dotenv.find_dotenv())
-client_id = os.getenv("CLIENT_ID")
-client_secret = os.getenv("CLIENT_SECRET")
+sptify_id = os.getenv("SPOTIFY_ID")
+spotify_secret = os.getenv("SPOTIFY_SECRET")
 
 
 def get_new_access_token():
@@ -15,8 +15,8 @@ def get_new_access_token():
 
     params = {
         "grant_type": "client_credentials",
-        "client_id": client_id,
-        "client_secret": client_secret
+        "client_id": sptify_id,
+        "client_secret": spotify_secret
     }
 
     authentication_response = requests.post(authentication_url, params)
@@ -42,7 +42,7 @@ def get_top_song_of_artist(artist_id):
     return data["tracks"]
 
 
-def p1m1_main():
+def project1_main():
     # bruno mars, clean bandit, anirudh ravichander, mark ronson, tones and I, katy perry, taylor swift, pharell williams
     artists_id = ["0du5cEVh5yTK9QJze8zA0C", "6MDME20pz9RveH9rEXvrOM", "4zCH9qm4R2DADamUHMCa6O", "3hv9jJF3adDNsBSIQDqcjp",
                   "2NjfBq1NflQcKSeiDooVjY", "6jJ0s89eD6GaHleKKya26X", "06HL4z0CvFAxyc27GXpf02", "2RdwBSPQiwcmiDo9kixcl8"]
