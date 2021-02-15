@@ -24,7 +24,9 @@
                 Artists:
                 {% endif %}
                 {% for i in range(song["artists"]|length) %}
-                <a href={{ song["artist_links"][i] }} style="display: inline;">{{ song["artists"][i] }}</a>
+                <a href={{ song["artist_links"][i] }} style="display: inline;">
+                    {{ song["artists"][i] }}
+                </a>
                 {% if i != ((song["artists"]|length) - 1) %}
                 ,
                 {% endif %}
