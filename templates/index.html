@@ -8,7 +8,7 @@
     <title>CS490 Project 1</title>
 </head>
 
-<body onload = "initialize()">
+<body onload="initialize()">
     <div id="music">
         <a href={{ song["song_url"] }}>
             <img src={{ song["image_url"] }} alt="this not working!" />
@@ -41,6 +41,24 @@
                 ,
                 {% endif %}
                 {% endfor %}
+            </span>
+            </br>
+            <span>
+                {% if song["genius_link"] != None %}
+                <a href={{song["genius_link"]}}>Genius Lyrics</a>
+                {% else %}
+                <p>
+                    {% if song["genius_artist_name"] != None %}
+                    No lyrics page for this song, but you can checkout the artists page:
+                    <a href={{song["genius_artist_link"]}}>
+                        <img id="genius_artist_image" src={{song["genius_artist_image"]}}>
+                        {{song["genius_artist_name"]}}
+                    </a>
+                    {% else %}
+                    Could not find any Genius info :/
+                    {% endif %}
+                </p>
+                {% endif %}
             </span>
         </div>
     </div>
