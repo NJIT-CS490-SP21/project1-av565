@@ -28,6 +28,7 @@ def string_difference(original, comparer):
     comparer = comparer.replace(' ', '').lower()
     common_letters = Counter(original) & Counter(comparer)
     common_letter_count = sum(common_letters.values())
+    print(original, comparer)
     return (abs(common_letter_count - len(original)) / len(original)) * 100
 
 
@@ -50,7 +51,7 @@ def genius_search_for_artist(artist_name, closeness):
     search_url = genius_base_url + "search"
     headers = {"Authorization": "Bearer {}".format(genius_token)}
     params = {
-        'q': detox(artist_name)
+        'q': artist_name
     }
     response = requests.get(search_url, data=params, headers=headers)
     data = response.json()
