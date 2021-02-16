@@ -19,8 +19,11 @@ def get_new_spotify_token():
     }
 
     authentication_response = requests.post(authentication_url, params)
-    access_token = authentication_response.json()["access_token"]
-    return access_token
+
+    try:
+        return authentication_response.json()["access_token"]
+    except:
+        return None
 
 
 access_token = get_new_spotify_token()
@@ -31,10 +34,13 @@ def get_top_song_of_artist(artist_id):
     '''
     return: list of all top song json objects
     '''
+    if access_token == None:
+        return None
     url = spotify_base_url + "artists/{}/top-tracks".format(artist_id)
     params = {"id": artist_id, "market": "US"}
     response = requests.get(url=url, headers=headers, params=params)
     data = response.json()
-    return data["tracks"]
-
-
+    try:
+        return data["tracks"]
+    except:
+        return None
