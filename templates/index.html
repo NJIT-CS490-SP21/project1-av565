@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    {{% if song == None %}}
+    {% if song == None %}
     There was some error loading the website :/
-    {{% else %}}
+    {% else %}
     <div id="music">
         <a href={{ song["song_url"] }}>
             <img src={{ song["image_url"] }} alt="this not working!" />
