@@ -12,7 +12,7 @@
     1. dotenv: install using command: pip install -U "python-dotenv"
     2. requests: install using command: python -m pip install requests
     3. Flask: install using command: pip install Flask
-    // Others _SHOULD_ be part of python
+    // Others *SHOULD* be part of python
     4. os
     5. dotenv
     6. random
