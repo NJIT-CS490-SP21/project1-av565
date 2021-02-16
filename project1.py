@@ -18,6 +18,8 @@ def project1_main():
     song = top_tracks[song_num]
     genius_info = genius_search_for_song(song["name"])
     genius_artist_info = genius_search_for_artist(song["artists"][0]["name"], 80)
+    # print(song["name"])
+    # print(song["artists"][0]["name"])
 
     song = {
         "name": song["name"],
