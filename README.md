@@ -11,7 +11,7 @@ The song returned _might not_ be the top song by listned to. This is just a rand
 
 1. dotenv: install using command: pip install -U "python-dotenv"
 2. requests: install using command: python -m pip install requests
-3. Flask: install using command: pip install Flask\
+3. Flask: install using command: pip install Flask
 
 #### Others _SHOULD_ be part of python:
 
