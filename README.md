@@ -1,4 +1,4 @@
-# CS490 Project 1 Milestone 1
+# CS490 Project 1
 
     This app shows information on a random artist's top played song, from a list of nine hard-coded artists. Furthermore, the app fetches a Genius lyrics link to the song (closest), and if the song is not available, it attempts to fetch the [primary artist]'s link on Genius.
     The song image and the name of the song takes you to the song on spotify.
