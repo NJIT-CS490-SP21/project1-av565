@@ -5,14 +5,16 @@ The song image and the name of the song takes you to the song on spotify.
 The artists' names take you to the corresponding page on Spotify.
 The "Genius Lyrics" takes you to the lyrics page from Genius.
 PLEASE NOTE:
-The song returned _might not_ be the top song by listned to. This is just a random song from Spotify API's https://api.spotify.com/v1/artists/{id}/top-tracks GET request.
+The song returned _might not_ be the top song by listned to. This is just a random song from Spotify API's [GET request](https://api.spotify.com/v1/artists/{id}/top-tracks).
 
 ## Packages/Libraries Used (_SOME_ MAY HAVE ALREADY BEEN INSTALLED):
 
 1. dotenv: install using command: pip install -U "python-dotenv"
 2. requests: install using command: python -m pip install requests
-3. Flask: install using command: pip install Flask
-   // Others _SHOULD_ be part of python
+3. Flask: install using command: pip install Flask\
+
+#### Others _SHOULD_ be part of python:
+
 4. os
 5. dotenv
 6. random
