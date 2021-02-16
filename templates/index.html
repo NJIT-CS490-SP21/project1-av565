@@ -8,17 +8,27 @@
     <title>CS490 Project 1</title>
 </head>
 
-<body>
-    <div class="main_page">
-        <div class="song_image">
-            <a href={{ song["song_url"] }}>
-                <img src={{ song["image_url"] }} alt="this not wokring!" />
-            </a>
-        </div>
+<body onload = "initialize()">
+    <div id="music">
+        <a href={{ song["song_url"] }}>
+            <img src={{ song["image_url"] }} alt="this not working!" />
+        </a>
         <div class="song_info">
-            <p>Song: <a href={{ song["song_url"] }}>{{ song["name"] }}</a></p>
-            <p>
-                {% if song["artists"]|length == 1 %}
+            <span>Song: <a href={{ song["song_url"] }}>{{ song["name"] }}</a></span>
+            </br>
+            <div id="player">
+                {% if song["song_preview"] != None %}
+                <audio id="song" controls src={{ song["song_preview"] }}>
+                    Your browser does not support the <code>audio</code> element.
+                </audio>
+                </br>
+                {% else %}
+                <span>Song preview not available</span>
+                {% endif %}
+            </div>
+            </br>
+            <span>
+                {% if (song["artists"]|length) == 1 %}
                 Artist:
                 {% else %}
                 Artists:
@@ -31,18 +41,7 @@
                 ,
                 {% endif %}
                 {% endfor %}
-            </p>
-        </div>
-        <div class="song_player">
-            {% if song["song_preview"] != None %}
-            <!-- <iframe src={{ song["song_preview"] }} frameborder="0" allowtransparency="true"></iframe> -->
-            <figcaption>A preview of the song:</figcaption>
-            <audio controls src={{ song["song_preview"] }}>
-                Your browser does not support the <code>audio</code> element.
-            </audio>
-            {% else %}
-            <p>Song preview not available</p>
-            {% endif %}
+            </span>
         </div>
     </div>
 </body>
