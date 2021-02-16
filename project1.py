@@ -1,45 +1,5 @@
-import os
-import requests
-import time
-import dotenv
-import random
-import json as js
-
-dotenv.load_dotenv(dotenv.find_dotenv())
-sptify_id = os.getenv("SPOTIFY_ID")
-spotify_secret = os.getenv("SPOTIFY_SECRET")
-
-
-def get_new_access_token():
-    authentication_url = "https://accounts.spotify.com/api/token"
-
-    params = {
-        "grant_type": "client_credentials",
-        "client_id": sptify_id,
-        "client_secret": spotify_secret
-    }
-
-    authentication_response = requests.post(authentication_url, params)
-    access_token = authentication_response.json()["access_token"]
-    return access_token
-
-
-access_token = get_new_access_token()
-
-base_url = "https://api.spotify.com/v1/"
-
-headers = {"Authorization": "Bearer {}".format(access_token)}
-
-
-def get_top_song_of_artist(artist_id):
-    '''
-    return: list of all top song json objects
-    '''
-    url = base_url + "artists/{}/top-tracks".format(artist_id)
-    params = {"id": artist_id, "market": "US"}
-    response = requests.get(url=url, headers=headers, params=params)
-    data = response.json()
-    return data["tracks"]
+from spotify import *
+from genius import *
 
 
 def project1_main():
