@@ -42,7 +42,9 @@ The song returned _might not_ be the top song by listned to. This is just a rand
 
 ## M1 and M2 Combined:
 
-a. 1. I was unable to send the song's json dictionary to the flask template. I created my own dictionary to store the essential information from the song.json() object, and sent that instead. 2. Had trouble figuring out the Genius auth flow, found out that you do not need to generate an access token everytime. 3. Had issues with stylizing, somehow figured out a way to center the song info according to the song image. I used a display: flex CSS for the image, making it the size of the entire page (hopefully)
-b. The only issue is how the genius API works. I wanted to generate an artist link incase the song is not found, but as it might turn out, there is no way for the song to _NOT_ be available.
-c. Make the Page a bit more stylized, formatting and centering the elements correctly.
-d. In the future, I would change up the stylizing, make it according to my _dream_ look. I would also add user interactivity by making the artists chosen by the user. Some other feature might be using web-scraping to display the lyrics on the page, and making something on the page to change according to the frequency of the song from the <audio> element.
+- 1. I was unable to send the song's json dictionary to the flask template. I created my own dictionary to store the essential information from the song.json() object, and sent that instead.
+  2. Had trouble figuring out the Genius auth flow, found out that you do not need to generate an access token everytime.
+  3. Had issues with stylizing, somehow figured out a way to center the song info according to the song image. I used a display: flex CSS for the image, making it the size of the entire page (hopefully).
+- The only issue is how the genius API works. I wanted to generate an artist link incase the song is not found, but as it might turn out, there is no way for the song to _NOT_ be available.
+- Make the Page a bit more stylized, formatting and centering the elements correctly.
+- In the future, I would change up the stylizing, make it according to my _dream_ look. I would also add user interactivity by making the artists chosen by the user. Some other feature might be using web-scraping to display the lyrics on the page, and making something on the page to change according to the frequency of the song from the <audio> element.
