@@ -5,6 +5,12 @@ img {
   padding: 2px;
 }
 
+#genius_artist_image {
+  width: 10%;
+  height: auto;
+  padding: 1px;
+}
+
 img:hover {
   border: 2px solid;
 }
