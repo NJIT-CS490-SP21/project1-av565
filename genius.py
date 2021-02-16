@@ -18,6 +18,3 @@ def genius_search_for_song(song_name):
     response = requests.get(search_url, data=params, headers=headers)
     data = response.json()
     song = data["response"]["hits"][0]
-    print(js.dumps(song, indent=4))
-
-genius_search_for_song("Chandelier")
