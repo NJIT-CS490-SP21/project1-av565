@@ -1,38 +1,72 @@
 img {
-    width: 50%;
-    height: auto;
-    padding: 4px;
+  width: 98%;
+  height: auto;
+  max-width: 400px;
+  padding: 2px;
 }
 
-.song_image {
-    position: absolute;
-    top: 10%;
-    left: 10%;
+img:hover {
+  border: 2px solid;
 }
 
-audio {
-    width: 80%;
-    padding-left: 1%;
-    padding-right: 1%;
+#music {
+  display: flex;
+  align-items: center;
+}
+
+#song {
+  position: fixed;
+  width: 50%;
+}
+
+.song_info {
+  padding: 2px;
+}
+
+@keyframes bgcolor {
+  0% {
+    background-color: #4c3f54;
+  }
+  25% {
+    background-color: #d13525;
+  }
+  75% {
+    background-color: #f2c057;
+  }
+  100% {
+    background-color: #486824;
+  }
+}
+
+body {
+  -webkit-animation: bgcolor 30s infinite;
+  animation: bgcolor 30s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
+span {
+  filter: invert(1);
+  mix-blend-mode: difference;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    background: linear-gradient(
-            currentColor,
-            transparent,
-            currentColor,
-            transparent,
-            currentColor,
-            transparent,
-            currentColor
-        )
-        repeat-x 0 100% / 100% 3px;
-    box-decoration-break: clone;
+  color: inherit;
+  text-decoration: none;
+  background: linear-gradient(
+      currentColor,
+      transparent,
+      currentColor,
+      transparent,
+      currentColor,
+      transparent,
+      currentColor
+    )
+    repeat-x 0 100% / 100% 3px;
+  box-decoration-break: clone;
 }
 
 a:hover,
 a:focus {
-    color: #2e6bdd;
+  color: #2e6bdd;
 }
